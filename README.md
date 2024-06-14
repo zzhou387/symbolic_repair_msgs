@@ -15,5 +15,5 @@ rosrun symbolic_repair_msgs fake_feasibility_check_node.py
 
 3. Run the fake repair suggestion
 ```bash
-rosrun symbolic_repair_msgs fake_repair_suggestion_node.py
+rosrun symbolic_repair_msgs fake_repair_node.py
 ```
