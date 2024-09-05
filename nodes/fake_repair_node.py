@@ -1,5 +1,5 @@
 import rospy
-from symbolic_repair_msgs.msg import SkillArray, Skill, State, FeasibilityArray, Feasibility
+from symbolic_repair_msgs.msg import SkillArray, Skill, State, AtomicProposition, FeasibilityArray, Feasibility
 from symbolic_repair_msgs.srv import FeasibilityCheck, FeasibilityCheckResponse
 
 if __name__ == '__main__':
@@ -9,12 +9,21 @@ if __name__ == '__main__':
   Skills = SkillArray()
   skill1 = Skill()
   skill1.name = "skill1"
-  skill1.initial_preconditions = ["x0", "y0"]
-  intermediate_state = State()
-  intermediate_state.precondition = ["x0", "y0"]
-  intermediate_state.postcondition = ["x1", "y0"]
-  skill1.intermediate_states = [intermediate_state]
-  skill1.final_postconditions = ["x1", "y0"]
+  ap1 = AtomicProposition()
+  ap1.atomic_proposition = ["x0", "0"]
+  ap2 = AtomicProposition()
+  ap2.atomic_proposition = ["x1", "0"]
+  skill1.initial_preconditions = [ap1, ap2]
+  # intermediate_state = State()
+  # intermediate_state.precondition = ["x0", "y0"]
+  # intermediate_state.postcondition = ["x1", "y0"]
+  # skill1.intermediate_states = [intermediate_state]
+  
+  ap3 = AtomicProposition()
+  ap3.atomic_proposition = ["x0", "1"]
+  ap4 = AtomicProposition()
+  ap4.atomic_proposition = ["x1", "1"]
+  skill1.final_postconditions = [ap3, ap4]
   Skills.skills = [skill1]
   Skills.header.stamp = rospy.Time.now()
   

@@ -22,6 +22,7 @@ add_message_files(
   State.msg 
   Feasibility.msg
   FeasibilityArray.msg
+  AtomicProposition.msg
 )
 
 ## Generate services in the 'srv' folder

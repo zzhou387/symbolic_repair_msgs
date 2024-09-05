@@ -1,2 +1,2 @@
-string[] precondition
-string[] postcondition
+AtomicProposition[] precondition
+AtomicProposition[] postcondition
