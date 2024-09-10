@@ -23,12 +23,15 @@ add_message_files(
   Feasibility.msg
   FeasibilityArray.msg
   AtomicProposition.msg
+  TerrainState.msg
+  OnlineRepairResult.msg
 )
 
 ## Generate services in the 'srv' folder
 add_service_files(
   FILES
   FeasibilityCheck.srv
+  OnlineRepairWithNewTerrain.srv
 )
 
 ## Generate added messages and services with any dependencies listed here
@@ -49,6 +52,14 @@ catkin_install_python(PROGRAMS nodes/fake_feasibility_check_node.py
 )
 
 catkin_install_python(PROGRAMS nodes/fake_repair_node.py
+  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+)
+
+catkin_install_python(PROGRAMS nodes/fake_online_execution_node.py
+  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+)
+
+catkin_install_python(PROGRAMS nodes/fake_online_repair_node.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 

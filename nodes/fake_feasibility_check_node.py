@@ -8,8 +8,10 @@ def symbolic_suggestion_callback(req):
   print(req.skills_requested)
   res = FeasibilityCheckResponse()
   fea = FeasibilityArray()
+  ans = True
   for skill in req.skills_requested.skills:
-    fea.feasibilities.append(Feasibility(skill.name, True))
+    fea.feasibilities.append(Feasibility(skill.name, ans))
+    ans = not ans
   res.feasibilities_checked = fea
   print("Sending response")
   print(res.feasibilities_checked)
