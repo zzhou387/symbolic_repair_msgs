@@ -1,0 +1,7 @@
+# Service message for online repair with new terrain
+
+# The new terrain state to be used for repair
+TerrainAndRequestStates terrain_request_states
+---
+# Return the slugsin location that stores the new specification
+OnlineRepairResult repair_result

@@ -1,5 +1,5 @@
 import rospy
-from symbolic_repair_msgs.msg import SkillArray, Skill, State, AtomicProposition, FeasibilityArray, Feasibility
+from symbolic_repair_msgs.msg import SkillPrimitiveArray, SkillPrimitive, State, AtomicProposition, FeasibilityArray, Feasibility
 from symbolic_repair_msgs.srv import FeasibilityCheck, FeasibilityCheckResponse
 from std_msgs.msg import Bool
 
@@ -9,14 +9,14 @@ def symbolic_suggestion_callback(req):
   res = FeasibilityCheckResponse()
   fea = FeasibilityArray()
   ans = True
-  for skill in req.skills_requested.skills:
+  for skill in req.skills_requested.primitives:
     fea.feasibilities.append(Feasibility(skill.name, ans))
     ans = not ans
   res.feasibilities_checked = fea
   print("Sending response")
   print(res.feasibilities_checked)
   return res
-  
+
   
 #==============================
 #             Main

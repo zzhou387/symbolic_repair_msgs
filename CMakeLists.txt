@@ -19,11 +19,14 @@ add_message_files(
   FILES
   Skill.msg
   SkillArray.msg
+  SkillPrimitive.msg
+  SkillPrimitiveArray.msg
   State.msg 
   Feasibility.msg
   FeasibilityArray.msg
   AtomicProposition.msg
   TerrainState.msg
+  TerrainAndRequestStates.msg
   OnlineRepairResult.msg
 )
 
@@ -32,6 +35,7 @@ add_service_files(
   FILES
   FeasibilityCheck.srv
   OnlineRepairWithNewTerrain.srv
+  OnlineRepairWithNewTerrainAndRequest.srv
 )
 
 ## Generate added messages and services with any dependencies listed here

@@ -18,7 +18,7 @@ rosrun symbolic_repair_msgs fake_feasibility_check_node.py
 rosrun symbolic_repair_msgs fake_repair_node.py
 ```
 
-## Usage (test online repair with new terrain state)
+## Usage (test online repair with new terrain and request states)
 A unitest can be run.
 1. Start the roscore
 ```bash
