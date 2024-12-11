@@ -34,6 +34,7 @@ add_message_files(
 add_service_files(
   FILES
   FeasibilityCheck.srv
+  PrimitiveFeasibilityCheck.srv
   OnlineRepairWithNewTerrain.srv
   OnlineRepairWithNewTerrainAndRequest.srv
 )

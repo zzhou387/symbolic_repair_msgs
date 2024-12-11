@@ -1,7 +1,7 @@
 # Service message for feasibility check
 
 # Symbolic suggestions to be tested for feasibility
-SkillArray skills_requested
+SkillPrimitiveArray skills_requested
 ---
 # Return the feasibility of the symbolic suggestions
 FeasibilityArray feasibilities_checked

@@ -1,12 +1,12 @@
 import rospy
 from symbolic_repair_msgs.msg import SkillPrimitiveArray, SkillPrimitive, State, AtomicProposition, FeasibilityArray, Feasibility
-from symbolic_repair_msgs.srv import FeasibilityCheck, FeasibilityCheckResponse
+from symbolic_repair_msgs.srv import PrimitiveFeasibilityCheck, PrimitiveFeasibilityCheckResponse
 from std_msgs.msg import Bool
 
 def symbolic_suggestion_callback(req):
   print("Received request")
   print(req.skills_requested)
-  res = FeasibilityCheckResponse()
+  res = PrimitiveFeasibilityCheckResponse()
   fea = FeasibilityArray()
   ans = True
   for skill in req.skills_requested.primitives:
@@ -23,6 +23,6 @@ def symbolic_suggestion_callback(req):
 #==============================
 if __name__ == '__main__':
   rospy.init_node('fake_feasibility_check_node')
-  service = rospy.Service('fake_feasibility_check', FeasibilityCheck, symbolic_suggestion_callback)
+  service = rospy.Service('fake_feasibility_check', PrimitiveFeasibilityCheck, symbolic_suggestion_callback)
   print("Ready to take symbolic suggestions")
   rospy.spin()
