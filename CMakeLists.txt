@@ -56,7 +56,15 @@ catkin_install_python(PROGRAMS nodes/fake_feasibility_check_node.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 
+catkin_install_python(PROGRAMS nodes/fake_feasibility_check_node_2.py
+  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+)
+
 catkin_install_python(PROGRAMS nodes/fake_repair_node.py
+  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+)
+
+catkin_install_python(PROGRAMS nodes/fake_repair_node_2.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 
@@ -64,7 +72,15 @@ catkin_install_python(PROGRAMS nodes/fake_online_execution_node.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 
+catkin_install_python(PROGRAMS nodes/fake_online_execution_node_2.py
+  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+)
+
 catkin_install_python(PROGRAMS nodes/fake_online_repair_node.py
+  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+)
+
+catkin_install_python(PROGRAMS nodes/fake_online_repair_node_2.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 
