@@ -24,9 +24,24 @@ if __name__ == '__main__':
   y_request = AtomicProposition()
   y_request.atomic_proposition = ["y", "0"]
   new_request = [x_request, y_request]
+  
+  invalid_trans_pre_x = AtomicProposition()
+  invalid_trans_pre_x.atomic_proposition = ["x", "1"]
+  invalid_trans_pre_y = AtomicProposition()
+  invalid_trans_pre_y.atomic_proposition = ["y", "0"]
+  invalid_trans_pre = [invalid_trans_pre_x, invalid_trans_pre_y]
+  
+  invalid_trans_post_x = AtomicProposition()
+  invalid_trans_post_x.atomic_proposition = ["x", "2"]
+  invalid_trans_post_y = AtomicProposition()
+  invalid_trans_post_y.atomic_proposition = ["y", "0"]
+  invalid_trans_post = [invalid_trans_post_x, invalid_trans_post_y]
+  
 
   new_terrain_request.terrain_state = new_terrain
   new_terrain_request.request_state = new_request
+  new_terrain_request.invalid_transition_pre = invalid_trans_pre
+  new_terrain_request.invalid_transition_post = invalid_trans_post
   new_terrain_request.header.stamp = rospy.Time.now()
   
   rate = rospy.Rate(0.5)
