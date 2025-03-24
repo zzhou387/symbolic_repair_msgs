@@ -20,9 +20,9 @@ if __name__ == '__main__':
       new_terrain.append(terrain_ap)
       
   x_request = AtomicProposition()
-  x_request.atomic_proposition = ["x", "0"]
+  x_request.atomic_proposition = ["xrequest", "0"]
   y_request = AtomicProposition()
-  y_request.atomic_proposition = ["y", "0"]
+  y_request.atomic_proposition = ["yrequest", "0"]
   new_request = [x_request, y_request]
   
   invalid_trans_pre_x = AtomicProposition()
